@@ -1,0 +1,17 @@
+{
+  "name": "facebook-backend",
+  "version": "1.0.0",
+  "description": "Facebook Messenger application designed for Facebook marketing events",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Ki Jung Kim",
+  "license": "ISC"
+}
