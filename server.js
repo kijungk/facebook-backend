@@ -9,6 +9,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// app.use('/api', routes);
+app.use('/api', routes);
 
 module.exports = app;
