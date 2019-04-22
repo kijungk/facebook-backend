@@ -1,8 +1,8 @@
 const
   express = require('express'),
   constants = require('../../utilities/constants'),
-  //eventHandler = require('../../utilities/handlers/eventHandler'),
-  //sendHandler = require('../../utilities/handlers/sendHandler'),
+  eventHandler = require('../../utilities/handlers/eventHandler'),
+  sendHandler = require('../../utilities/handlers/sendHandler'),
   router = express.Router();
 
 router.route('/')
