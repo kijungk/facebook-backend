@@ -1,5 +1,5 @@
 module.exports = (function () {
-  const responseBuilder = require('../builders/responseBuilder');
+  //const responseBuilder = require('../builders/responseBuilder');
 
   function processPayload(payload) {
     let message = null;
