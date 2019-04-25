@@ -22,12 +22,12 @@ const forceSSL = function () {
 
 app.use(forceSSL());
 
-app.use(express.static(path.join(__dirname, '/dist/facebook-frontend')));
+app.use(express.static(__dirname + '/dist/facebook-frontend'));
 
 app.use('/api', routes);
 
 app.get('*', (request, response) => {
-  response.sendFile(path.join(__dirname, './dist/facebook-frontend/index.html'), (err) => {
+  response.sendFile(__dirname + './dist/facebook-frontend/index.html', (err) => {
     if (err) {
       response.status(500).json(err);
     }
