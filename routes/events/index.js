@@ -19,9 +19,7 @@ router.route('/')
       icon_id: 2
     });
 
-    return response.status(200).json({
-      body: events
-    });
+    return response.status(200).json(events);
   })
 
 module.exports = router;
