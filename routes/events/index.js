@@ -23,3 +23,5 @@ router.route('/')
       body: events
     });
   })
+
+module.exports = router;
