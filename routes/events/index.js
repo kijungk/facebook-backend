@@ -3,8 +3,8 @@ const
   router = express.Router();
 
 const
-  Bookshelf = require('../../db/models/bookshelf');
-Event = require('../../db/models/Event');
+  Bookshelf = require('../../db/models/bookshelf'),
+  Event = require('../../db/models/Event');
 
 router.route('/')
   .get((request, response) => {
