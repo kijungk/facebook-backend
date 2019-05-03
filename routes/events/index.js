@@ -8,8 +8,9 @@ const
 router.route('/')
   .get((request, response) => {
     //get events list from db
-    const query = knex.select('*').from('events').leftJoin('icons', 'events.icon_id', 'icons.id');
-    console.log('\n\n\n' + query);
-    return response.status(200).json(query);
+    return knex.select('*').from('events').leftJoin('icons', 'events.icon_id', 'icons.id')
+      .then((results) => {
+        console.log('\n\n\n' + results);
+      })
   })
 module.exports = router;
