@@ -17,7 +17,7 @@ router.route('/')
         withRelated: ['icon']
       })
       .then((events) => {
-        console.log(events);
+        console.log('\n\n\n\n' + events);
         return response.status(200).json(events);
       })
       .catch((error) => {
