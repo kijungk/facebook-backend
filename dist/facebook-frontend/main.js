@@ -290,7 +290,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"home\" class=\"page\">\n  <div class=\"content\">\n    <div class=\"content-item\">\n      <div class=\"title\">Select an Event to Moderate</div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"home\" class=\"page\">\n  <div class=\"content\">\n    <div class=\"content-item\">\n      <div class=\"title\">Select an Event to Moderate</div>\n      <div class=\"events\" *ngFor=\"let event of events | async\">\n        {{event}}\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -326,12 +326,11 @@ var HomeComponent = /** @class */ (function () {
         this.eventsService = eventsService;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getEvents().subscribe(function (response) { return console.log(response); });
+        this.getEvents();
     };
     HomeComponent.prototype.getEvents = function () {
-        console.log('hit');
-        console.log(this.eventsService.getEvents());
-        return this.eventsService.getEvents();
+        this.events = this.eventsService.getEvents();
+        return;
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
