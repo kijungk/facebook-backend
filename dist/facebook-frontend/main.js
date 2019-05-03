@@ -317,9 +317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var src_app_services_events_events_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/events/events.service */ "./src/app/services/events/events.service.ts");
-
+/* harmony import */ var src_app_services_events_events_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/events/events.service */ "./src/app/services/events/events.service.ts");
 
 
 
@@ -328,7 +326,7 @@ var HomeComponent = /** @class */ (function () {
         this.eventsService = eventsService;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getEvents().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) { console.log(response); console.log('hit2'); }));
+        this.getEvents().subscribe(function (response) { return console.log(response); });
     };
     HomeComponent.prototype.getEvents = function () {
         console.log('hit');
@@ -341,7 +339,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/pages/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/app/pages/home/home.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_events_events_service__WEBPACK_IMPORTED_MODULE_3__["EventsService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_events_events_service__WEBPACK_IMPORTED_MODULE_2__["EventsService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
