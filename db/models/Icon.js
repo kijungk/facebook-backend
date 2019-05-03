@@ -10,7 +10,7 @@ class Icon extends bookshelf.Model {
   }
 
   event() {
-    return this.hasMany('Event', 'icon_id');
+    return this.belongsToMany('Event', 'icon_id');
   }
 }
 
