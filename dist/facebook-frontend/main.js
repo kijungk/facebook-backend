@@ -290,7 +290,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"home\" class=\"page\">\n  <div class=\"content\">\n    <div class=\"content-item\">\n      <div class=\"title\">Select an Event to Moderate</div>\n      <div class=\"events\" *ngFor=\"let event of events | async\">\n        {{event}}\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"home\" class=\"page\">\n  <div class=\"content\">\n    <div class=\"content-item\">\n      <div class=\"title\">Select an Event to Moderate</div>\n      <div class=\"events\" *ngFor=\"let event of events | async\">\n        {{event.description}}\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
