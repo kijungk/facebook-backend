@@ -14,4 +14,4 @@ class Icon extends bookshelf.Model {
   }
 }
 
-module.exports = bookshelf.Model('Icon', Icon);
+module.exports = bookshelf.model('Icon', Icon);

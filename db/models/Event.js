@@ -14,4 +14,4 @@ class Event extends bookshelf.Model {
   }
 }
 
-module.exports = bookshelf.Model('Event', Event);
+module.exports = bookshelf.model('Event', Event);
