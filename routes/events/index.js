@@ -3,23 +3,27 @@ const
   router = express.Router();
 
 const
-  Event = require('../../db/models/Event');
+  Bookshelf = require('../../db/models/bookshelf');
+Event = require('../../db/models/Event');
 
 router.route('/')
   .get((request, response) => {
     //get events list from db
-
-    return new Event()
-      .fetchAll({
+    const Events = Bookshelf.Collection.extend({
+      model: Event
+    });
+    return new Events()
+      .fetch({
         withRelated: ['icon']
       })
       .then((events) => {
         console.log(events);
-        return;
+        return response.status(200).json(events);
       })
       .catch((error) => {
-        return response.status(500).json(error);
-      });
+        //save to db
+        return;
+      })
   })
 
 module.exports = router;
