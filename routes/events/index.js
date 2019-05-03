@@ -8,7 +8,7 @@ const
 router.route('/')
   .get((request, response) => {
     //get events list from db
-    return new Event()
+    return Event.forge()
       .fetchAll({
         withRelated: ['icon']
       })
