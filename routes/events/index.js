@@ -2,24 +2,24 @@ const
   express = require('express'),
   router = express.Router();
 
+const
+  Event = require('../../db/models/Event');
+
 router.route('/')
   .get((request, response) => {
     //get events list from db
-    const events = [];
 
-    events.push({
-      id: 1,
-      description: 'Hello',
-      icon_id: 2
-    });
-
-    events.push({
-      id: 2,
-      description: 'Goodbye',
-      icon_id: 2
-    });
-
-    return response.status(200).json(events);
+    return new Event()
+      .fetchAll({
+        withRelated: ['icon']
+      })
+      .then((events) => {
+        console.log(events);
+        return;
+      })
+      .catch((error) => {
+        return response.status(500).json(error);
+      });
   })
 
 module.exports = router;
