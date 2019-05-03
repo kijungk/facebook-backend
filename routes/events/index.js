@@ -9,7 +9,9 @@ router.route('/')
   .get((request, response) => {
     //get events list from db
     return new Event()
-      .fetchAll()
+      .fetchAll({
+        withRelated: ['icon']
+      })
       .then((events) => {
         console.log('\n\n\n\n' + events);
         return response.status(200).json(events);
