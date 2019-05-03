@@ -13,7 +13,7 @@ router.route('/')
         withRelated: ['icon']
       })
       .then((events) => {
-        console.log('\n\n\n\n' + events);
+        console.log('\n\n\n\n' + events.toJSON());
         return response.status(200).json(events);
       })
       .catch((error) => {
