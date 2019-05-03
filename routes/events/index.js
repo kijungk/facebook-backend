@@ -9,8 +9,8 @@ router.route('/')
   .get((request, response) => {
     //get events list from db
     return knex.select('*').from('events').leftJoin('icons', 'events.icon_id', 'icons.id')
-      .then((results) => {
-        console.log('\n\n\n' + results);
+      .then((events) => {
+        return response.status(200).json(events);
       })
   })
 module.exports = router;
