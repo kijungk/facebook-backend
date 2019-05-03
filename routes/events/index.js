@@ -9,6 +9,7 @@ Event = require('../../db/models/Event');
 router.route('/')
   .get((request, response) => {
     //get events list from db
+    console.log('\n\n\nsmoketest');
     const Events = new Bookshelf.Collection.extend({
       model: Event
     });
