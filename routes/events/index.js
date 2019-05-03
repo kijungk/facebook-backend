@@ -9,8 +9,7 @@ const
 router.route('/')
   .get((request, response) => {
     //get events list from db
-    console.log('\n\n\nsmoketest');
-    const Events = new Bookshelf.Collection.extend({
+    const Events = new Bookshelf.Collection({
       model: Event
     });
     return new Events
