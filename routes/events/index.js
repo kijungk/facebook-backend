@@ -3,23 +3,13 @@ const
   router = express.Router();
 
 const
-  Event = require('../../db/models/Event');
+  knex = require('../../db/knex');
 
 router.route('/')
   .get((request, response) => {
     //get events list from db
-    return Event.forge()
-      .fetchAll({
-        withRelated: ['icon']
-      })
-      .then((events) => {
-        console.log('\n\n\n\n' + events.toJSON());
-        return response.status(200).json(events);
-      })
-      .catch((error) => {
-        console.log(error);
-        //save to db
-        return;
-      })
+    const query = knex.select('*').from('events').leftJoin('icons', 'events.icon_id', 'icons.id');
+    console.log('\n\n\n' + query);
+    return response.status(200).json(query);
   })
 module.exports = router;
