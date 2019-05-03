@@ -328,10 +328,11 @@ var HomeComponent = /** @class */ (function () {
         this.eventsService = eventsService;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getEvents().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) { return console.log(response); }));
+        this.getEvents().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) { console.log(response); console.log('hit2'); }));
     };
     HomeComponent.prototype.getEvents = function () {
         console.log('hit');
+        console.log(this.eventsService.getEvents());
         return this.eventsService.getEvents();
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
