@@ -12,6 +12,8 @@ router.route('/')
     const Events = new Bookshelf.Collection({
       model: Event
     });
+
+    console.log('\n\n\n' + Events);
     return new Events
       .fetch({
         withRelated: ['icon']
